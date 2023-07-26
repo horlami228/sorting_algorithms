@@ -12,6 +12,10 @@ void bubble_sort(int *array, size_t size)
 	int swapped; /*activator for swap*/
 	int temp;
 
+	if (array == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; i < size - 1; i++)
 	{
 		swapped = 0;
