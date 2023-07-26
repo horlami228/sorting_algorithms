@@ -7,25 +7,21 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *sorted = (*list)->next;
 
+	if (*list == NULL)
+		return;
 	while (sorted)
 	{
 		while (sorted->prev && sorted->n < sorted->prev->n)
-		{
-			/*
+		{	/*
 			*detach the node from the list and make the space empty
 			*for a right shift of its previous node
 			*/
-
 			sorted->prev->next = sorted->next;
-			
 			/*
 			*Make sure the node is not pointing to NULL
 			*/
 			if (sorted->next != NULL)
-			{
 				sorted->next->prev = sorted->prev;
-				
-			}
 			/*
 			* insert the key node to the right position in list
 			*/
@@ -46,7 +42,7 @@ void insertion_sort_list(listint_t **list)
 				print_list(*list);
 			}
 		}
-		
+
 		sorted = sorted->next;
 	}
 }
