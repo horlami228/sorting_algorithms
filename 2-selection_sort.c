@@ -6,7 +6,7 @@
 */
 void selection_sort(int *array, size_t size)
 {
-	int i, j, mind_idx, temp;
+	size_t i, j, mind_idx, temp;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -24,8 +24,8 @@ void selection_sort(int *array, size_t size)
 			temp = array[i];
 			array[i] = array[mind_idx];
 			array[mind_idx] = temp;
+			print_array(array, size);
 		}
 
-		print_array(array, size);
 	}
 }
