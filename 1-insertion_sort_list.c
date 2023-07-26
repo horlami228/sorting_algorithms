@@ -17,12 +17,14 @@ void insertion_sort_list(listint_t **list)
 			*/
 
 			sorted->prev->next = sorted->next;
+			
 			/*
 			*Make sure the node is not pointing to NULL
 			*/
 			if (sorted->next != NULL)
 			{
 				sorted->next->prev = sorted->prev;
+				
 			}
 			/*
 			* insert the key node to the right position in list
@@ -33,6 +35,7 @@ void insertion_sort_list(listint_t **list)
 			if (sorted->prev != NULL)
 			{
 				sorted->prev->next = sorted;
+				print_list(*list);
 			}
 			/*
 			*check if the node was is first now
@@ -40,9 +43,10 @@ void insertion_sort_list(listint_t **list)
 			if (sorted->prev == NULL)
 			{
 				*list = sorted;
+				print_list(*list);
 			}
 		}
-		print_list(*list);
+		
 		sorted = sorted->next;
 	}
 }
