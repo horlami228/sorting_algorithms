@@ -4,11 +4,11 @@
  * @list: head pointer to the linked list
 */
 void insertion_sort_list(listint_t **list)
-{	
+{
 	listint_t *sorted;
 
-	if (list == NULL || *list == NULL || (*list)->next == NULL )
-		return;	
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
 	sorted = (*list)->next;
 	while (sorted)
 	{
@@ -43,7 +43,6 @@ void insertion_sort_list(listint_t **list)
 				print_list(*list);
 			}
 		}
-
 		sorted = sorted->next;
 	}
 }
