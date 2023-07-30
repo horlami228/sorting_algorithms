@@ -5,6 +5,7 @@
  * @i: Index on swap
  * @j: Index to swap
 */
+
 void swap(int *array, int i, int j)
 {
 	int temp = array[i];
@@ -21,6 +22,7 @@ void swap(int *array, int i, int j)
  * @size: size of the array
  * Return: Return the pivot index value
 */
+
 int lumoto_partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
@@ -58,6 +60,7 @@ int lumoto_partition(int *array, int low, int high, size_t size)
  * @high: upper bound
  * @length: length of array
 */
+
 void quick_sort_recursion(int *array, int low, int high, size_t length)
 {
 	if (low < high)
@@ -74,6 +77,7 @@ void quick_sort_recursion(int *array, int low, int high, size_t length)
  * @array: Array to sort
  * @length: length of array
 */
+
 void quick_sort(int *array, size_t length)
 {
 	quick_sort_recursion(array, 0, length - 1, length);
