@@ -28,18 +28,25 @@ int lumoto_partition(int *array, int low, int high, size_t size)
 	int i = low;
 	int j;
 
-	for (j = i; j < high; j++)
+	for (j = low; j < high; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			swap(array, i, j);
+			if (array[i] != array[j])
+			{
+				swap(array, i, j);
+				print_array(array, size);
+			}
 			i++;
 		}
-		
+
 	}
 
-	swap(array, i, high);
-	print_array(array, size);
+	if (array[i] != array[high])
+	{
+		swap(array, i, high);
+		print_array(array, size);
+	}
 
 	return (i);
 }
@@ -56,6 +63,7 @@ void quick_sort_recursion(int *array, int low, int high, size_t length)
 	if (low < high)
 	{
 		int lock = lumoto_partition(array, low, high, length);
+
 		quick_sort_recursion(array, low, lock - 1, length);
 		quick_sort_recursion(array, lock + 1, high, length);
 	}
